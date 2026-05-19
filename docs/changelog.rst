@@ -37,6 +37,21 @@ and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0
 
 ----
 
+0.1.2 — 2026-04-25
+-------------------
+
+**Changed**
+
+* Renamed the library to ``skeval``
+
+**Fixed**
+
+* Miscellaneous fixes and stability improvements
+
+**Full Changelog**: https://github.com/direkkakkar319-ops/skeval/compare/v0.1.1...v0.1.2
+
+----
+
 0.1.1 — 2026-04-25
 -------------------
 
