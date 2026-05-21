@@ -11,7 +11,7 @@ on:
 
 jobs:
   security-audit:
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || vars.ENABLE_AUTO_CI == 'true'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request' || github.event_name == 'schedule' || vars.ENABLE_AUTO_CI == 'true'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
