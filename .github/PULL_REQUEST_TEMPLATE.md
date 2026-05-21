@@ -33,9 +33,7 @@ I used AI assistance for:
 
 
 <!--
-Thank you for your patience. Changes to scikit-learn require careful
-attention, but with limited maintainer time, not every contribution can be reviewed
-quickly.
-
+Thanks for contributing to skeval. Please keep PRs focused and include the
+relevant validation commands for code or documentation changes.
 Thanks for contributing!
 -->
