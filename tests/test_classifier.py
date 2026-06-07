@@ -312,7 +312,7 @@ def test_train_lr_override_does_not_mutate():
 
 
 def test_train_does_not_leak_overrides_into_fit():
-    """A train() override must not affect a subsequent fit() call."""
+    """train() override must not affect a subsequent fit() call."""
     clf = SentenceClassifier(embed_dim=16, epochs=10)
     with warnings.catch_warnings(record=True):
         warnings.simplefilter("always")
