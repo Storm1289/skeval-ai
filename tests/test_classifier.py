@@ -311,13 +311,24 @@ def test_train_lr_override_does_not_mutate():
     assert clf.lr == 0.005
 
 
-def test_train_does_not_leak_overrides_into_fit():
-    """train() override must not affect a subsequent fit() call."""
+def test_train_epochs_override_does_not_mutate():
+    """train() must use the epochs override for one call without mutating self."""
     clf = SentenceClassifier(embed_dim=16, epochs=10)
     with warnings.catch_warnings(record=True):
         warnings.simplefilter("always")
         clf.train(SENTENCES, LABELS, epochs=1)
     assert clf.epochs == 10
+
+
+def test_train_does_not_leak_overrides_into_fit():
+    """train() call passing all overrides must not mutate any of them."""
+    clf = SentenceClassifier(embed_dim=16, epochs=10, batch_size=32, lr=0.005)
+    with warnings.catch_warnings(record=True):
+        warnings.simplefilter("always")
+        clf.train(SENTENCES, LABELS, epochs=1, batch_size=8, lr=0.123)
+    assert clf.epochs == 10
+    assert clf.batch_size == 32
+    assert clf.lr == 0.005
 
 
 def test_fit_y_non_string_raises():
